@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<script th:src="@{/JS/script.js}"></script>
+<style>
+	th{
+		padding: 0.8vw;
+	}
+	.tdh{
+		font-size:1.2vw;
+		padding: 0.8vw;
+	}
+</style>
+
+<body>
+	<div clsss="container">
+		<div class="card col-md-4 mx-auto">
+			<div class="card-body col-md-12 mx-auto">
+				<form action="confirm-pay">
+					<table class="p-2">
+						<tr>
+							<th>Product Name</th>
+							<td th:text="${product.name}" class="tdh"></td>
+							<input type="hidden" name="pid" th:value="${product.pid}">
+						</tr>
+						<tr>
+							<th>Product Category</th>
+							<td th:text="${product.category.category}" class="tdh"></td>
+						</tr>
+						<tr>
+							<th>Product Brand</th>
+							<td th:text="${product.brand}"  class="tdh"></td>
+						</tr>
+						<tr>
+							<th>Product Price</th>
+							<td class="tdh">&#8377; <label id="price" th:text="${product.price}"></label></td>
+							<input type="hidden" name="price" th:value="${product.price}">
+						</tr>
+						<tr>
+							<th>Available Quantity</th>
+							<td class="tdh" th:text="${product.unit_in_stock}" id="available"></td>
+						</tr>
+						<tr>
+							<th>Enter Quantity</th>
+							<td class="tdh"> <input type="number" onchange="calculateCost(this)" name="quantity" id="quantity"
+								min="1"	value="1" th:max="${product.unit_in_stock}"></td>
+						</tr>
+						<tr>
+							<th>Total Cost</th>
+							<td class="tdh">&#8377; <label id="total" th:text="${product.price}" name="total"></label></td>
+						</tr>
+					</table>
+					<div class="row form-group">
+						<div class="col-md-12" style="text-align: center;">
+							<button class="btn btn-primary">Order Now</button>
+							<a class="btn" href="purchase" style="background-color: orange;">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

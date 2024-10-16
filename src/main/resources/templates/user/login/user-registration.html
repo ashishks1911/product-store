@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<script th:src="@{/JS/script.js}"></script>
+
+<body>
+	<div clsss="container">
+		<div class="card col-md-6 mx-auto">
+			<div class="card-body">
+			<form action="registeruser" method="post">
+				<div class="row form-group">
+					<div class="col-md-12">
+						<label for="userid">Enter User ID</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="userid" name="userid" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="name">Enter Name</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="name" name="name" required>
+					</div>
+					<div class="col-md-6">
+						<label for="phone">Enter Phone No.</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="phone" name="phone" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="password">Enter Password</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="password" name="password" required>
+					</div>
+					<div class="col-md-6">
+						<label for="rpassword">Confirm Password</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="rpassword" name="rpassword" required>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-12">
+						<label for="address">Enter Address</label><span style="color: red">*</span>
+						<input type="text" class="form-control" id="address" name="address" required>
+					</div>
+				</div>
+				<div>
+					<label id="passcheck" style="color: red;"></label>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-12" style="text-align: center;">
+						<button class="btn btn-primary" th:onclick="return checkPassword()">Register</button>
+						<a class="btn" href="/productstore/user" style="background-color: orange;">Cancel</a>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+.bgi{
+	background-image: linear-gradient(to right, #8360c3, #2ebf91);
+}
+
+.bt{
+	background-color: white;
+	color:blue;
+	padding:0.4vw 2vw;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.3vw;
+	margin-left: 1vw;
+	border:none;
+	border-radius: 0.5vw;
+	cursor: pointer;
+}
+.bt:hover{
+	text-decoration: underline;
+	color:black;
+	
+}
+.dv{
+	font-size: 3.5vw;
+	text-align:center;
+	margin-top: 4vw;
+}
+.dv2{
+	font-size: 3.5vw;
+	text-align:center;
+}
+.gap{
+	margin-top:1.2vw;
+}
+.lw{
+	display: inline;
+	position: relative;
+	bottom:5.5vw;
+}
+.btt{
+	margin-left: 0;
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-bottom: 1.2vw;
+    padding: 0.4vw
+}
+.td{
+	width:30%;
+	font-size: 1.5vw;
+	padding: 0 0.8vw;
+}
+.tdin{
+	width:70%;
+	padding:0 0.8vw;
+	font-size:1.3vw;
+}

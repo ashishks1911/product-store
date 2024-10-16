@@ -1,0 +1,46 @@
+
+.login-panel {
+    background-color: #999999;
+    display: block;
+}
+
+.dv{
+	font-size: 3.5vw;
+	text-align:center;
+	margin-top: 5vw;
+}
+
+.form{
+	margin-top: 5vw;
+}
+.ta {
+	background-color: darkslategray;
+    padding: 2vw 4vw 4vw 4vw;
+    z-index: 1;
+    font-size: 1.5vw;
+    margin:0 auto;
+    opacity:0.95;
+}
+
+.tb{
+    width: 7vw;
+    padding-top: 18px;
+    color:white
+}
+
+.td-top {
+    background-color: aqua;
+    padding: 10px;
+}
+
+td input {
+    width: 16vw;
+    font-size: 1.6vw;
+}
+
+
+.btn {
+    font-size: 1.4vw;
+	padding: 2px 22px;
+	margin-top: 15px;
+}

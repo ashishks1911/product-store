@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/inventory/top"></div>
+<body>
+	<div clsss="container">
+		<div class="card col-md-10 mx-auto">
+		<div class="card-body">
+			<div th:if="${clist.empty}" class="dv">
+				<label style="color: red;font-size:2.0vw">Category List is Empty</label>
+			</div>
+			<div th:if="${!clist.empty}">
+				<table class="table">
+					<thead class="bg-primary">
+						<th>Category ID</th>
+						<th>Category</th>
+						<th>Description</th>
+						<th style="color: magenta;">Action</th>
+					</thead>
+					<tbody>
+						<tr th:each="cat:${clist}">
+							<td th:text="${cat.catid}"></td>
+							<td th:text="${cat.category}"></td>
+							<td th:text="${cat.description}"></td>
+							<td>
+								<a th:href="@{edit(catid=${cat.catid})}">Edit |</a>
+								<a th:href="@{remove(catid=${cat.catid})}">Remove</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+			<div class="dv2">
+			<a href="add" class="bt">Add new Category</a>
+			<a href="/productstore/inventory/home" class="bt" style="background-color: magenta;">Back</a>
+			</div>
+	</div>
+</body>
+</html>

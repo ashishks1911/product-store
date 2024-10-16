@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<head>
+	<link th:href='@{/CSS/login.css}' rel='stylesheet' />
+	<link th:href='@{/CSS/style.css}' rel='stylesheet' />
+
+</head>
+<body class="bgi">
+	<div align="center">
+		<div class="dv">
+			<a href="product/purchase" class="bt" >purchase Product</a>
+			<a href="product/buy/transaction-list" class="bt" >View Transaction</a>
+			<form action="profile" style="display: inline;" method="post">
+				<input type="hidden" th:value="${session.uid}" name="userid">
+				<button class="bt">My Profile</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

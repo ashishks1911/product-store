@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/inventory/top"></div>
+<head>
+	<link th:href='@{/CSS/login.css}' rel='stylesheet' />
+	<link th:href='@{/CSS/style.css}' rel='stylesheet' />
+</head>
+<body class="bgi">
+	<div align="center">
+		<div class="dv">
+			<a href="product/manage" class="bt" >Manage Product</a>
+			<a href="category/manage" class="bt" >Manage Category</a>
+			<a href="/productstore/inventory/search" class="bt" >Search Products</a>
+		</div>
+	</div>
+</body>
+</html>

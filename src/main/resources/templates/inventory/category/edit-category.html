@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/inventory/top"></div>
+<body>
+	<div class="dv">
+			<form action="update" style="display: inline-block;">
+				<table style="background-color: white;padding:1.5vw;display:block">
+					<tr>
+						<td class="td">Edit Category</td>
+						<td class="tdin"><input type="text" name="category" style="width: 98%;" th:value="${category.category}"></td>
+						<input type="hidden" name="catid" th:value="${category.catid}">
+					</tr>
+					<tr>
+						<td class="td">Edit Description</td>
+						<td class="tdin">
+							<textarea name="description" th:value="${category.description}" th:text="${category.description}" rows="5" style="width: 98%;height: 7vw;margin-top:1.8vw;">
+							</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<button class="btn btn-primary">Update Category</button>
+							<a class="btn" href="manage" style="background-color: orange;">Cancel</a>
+						</td>
+					</tr>
+				</table>	
+			</form>
+	</div>
+</body>
+</html>

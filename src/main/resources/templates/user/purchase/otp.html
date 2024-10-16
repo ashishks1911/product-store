@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<script th:src="@{/JS/script.js}"></script>
+<body>
+	<div clsss="container">
+		<div class="card col-md-5 mx-auto">
+			<div class="card-body" style="text-align: center;">
+				<form action="buy/transaction">
+				<h1 style="color: green;padding:1.5vw">Enter OTP to continue</h1>
+				<h3>OTP</h3>
+				<div>
+					<label style="font-size: 1.6vw;" th:text="${otpn}" id="otpn"></label>
+				</div>
+				<br><br>
+					<input type="text" name="otp" id="otp" placeholder="Type OTP">
+					<br>
+					<button class="btn btn-primary" th:onclick="return checkOtp()">Continue</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/search/top"></div>
+<body>
+	<div clsss="container">
+		<div class="card col-md-10 mx-auto">
+		<div class="card-body">
+			<div th:if="${plist.empty}" class="dv">
+				<label style="color: red;font-size:2.0vw">Product List is Empty</label>
+			</div>
+			<div th:if="${!plist.empty}">
+				<div>
+					<label th:text="${result}"></label>
+				</div>
+				<table class="table">
+					<thead class="bg-primary" style="color: white;">
+						<th>Product ID</th>
+						<th>Name</th>
+						<th>Category</th>
+						<th>Brand</th>
+						<th>Unit in Stock</th>
+						<th>Price</th>
+						<th>Stock status</th>
+						<th style="color: magenta;">Action</th>
+					</thead>
+					<tbody>
+						<tr th:each="product:${plist}">
+							<td th:text="${product.pid}"></td>
+							<td th:text="${product.name}"></td>
+							<td th:text="${product.category.category}"></td>
+							<td th:text="${product.brand}"></td>
+							<td th:text="${product.unit_in_stock}"></td>
+							<td th:text="${product.price}"></td>
+							<td th:if="${product.unit_in_stock>0}" style="color: green;"> in stock</td>
+							<td th:if="${product.unit_in_stock<=0}" style="color: red;">Out of stock</td>							
+							<td>
+								<a th:href="@{edit(pid=${product.pid})}">Edit |</a>
+								<a th:href="@{remove(pid=${product.pid})}">Remove</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+			<div class="dv2" style="margin-top: 1.5vw;">
+			<a href="/productstore/inventory/search" class="bt" style="background-color: magenta;">Back</a>
+			</div>
+	</div>
+</body>
+</html>

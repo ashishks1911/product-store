@@ -1,0 +1,97 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/search/top"></div>
+
+<head>
+	<style>
+		.btn {
+			font-size: 1.4vw;
+			padding: 0.2vw 2.5vw;
+		}
+		
+		.btn2{
+			padding: 2.9vw;
+			border-radius: 5px;
+			font-size: 1.5vw;
+		}
+
+		.tp {
+			background-color: white;
+			padding: 1.5vw;
+			width: 60%;
+			margin: 0 auto;
+		}
+		.ti{
+			width: 62%;
+			padding-top: 0.5vw;
+		}
+		.ss{
+			font-size: 1.5vw;
+			padding: 0.5vw 1.5vw;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="dv">
+		<form action="search/byBrand">
+			<table class="tp">
+				<tr>
+					<td class="td">Search By Brand</td>
+					<td style="width: 80%;">
+						<input type='text' name='brand' style="width: 95%">
+					</td>
+					<td>
+						<button class="btn btn-primary" style="margin: 0.5vw;">Search</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="search/byCategory">
+			<table class="tp">
+				<tr>
+					<td class="td">Search By Category</td>
+					<td style="width: 80%;">
+						<input type='text' name='category' style="width: 95%">
+					</td>
+					<td>
+						<button class="btn btn-primary" style="margin: 0.5vw;">Search</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="search/byPrice">
+			<table class="tp">
+				<tr>
+					<td colspan="3" style="text-align: center;font-size: 2.5vw;background-color: palegreen;">
+						<label>Search By Price</label>
+					</td>
+				</tr>
+				<tr>
+					<td class="ss">Price Under</td>
+					<td class="ti">
+						<input type='text' name='under' style="width: 97%">
+					</td>
+					<td rowspan="3">
+						<button type="submit" class="btn2 btn-primary" style="margin: 0.5vw;">Search</button>
+					</td>
+				</tr>
+				<tr>
+					<td class="ss">Price Range</td>
+					<td class="ti">
+						<input type='text' name='price1' style="width: 48%">
+						<input type='text' name='price2' style="width: 48%">
+					</td>
+				</tr>
+				<tr>
+					<td class="ss">Price Above</td>
+					<td class="ti" style="padding-bottom: 0.5vw;">
+						<input type='text' name='above' style="width: 97%">
+					</td>
+				</tr>
+			</table>
+		</form>
+		</table>
+	</div>
+</body>
+
+</html>

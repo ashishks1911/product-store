@@ -1,0 +1,65 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/login.css}' rel='stylesheet' />
+	<link th:href='@{/CSS/style.css}' rel='stylesheet' />
+	<script th:src='@{/JS/script.js}'></script>
+	<style type="text/css">
+		.validate{
+			color:red;
+			font-size:20px;
+			padding-top:2px;
+		}
+		
+	</style>
+</head>
+<body class="bgi">
+	<div class="dv" style="color: yellow;">
+		<label>ONLINE PRODUCT STORE</label>
+	</div>
+	<form action="/productstore/user/login/authenticate" method="post" class="form">
+		<table class='ta'>
+			<tr>
+				<td colspan='2' align='center' class="td-top">
+					<label>User Login Form</label>
+				</td>
+			</tr>
+			<tr>
+				<td class='tb'>User ID</td>
+				<td class='tb'><input type='text' name='uid'  id='uid'/></td>
+			</tr>
+			<tr>
+				<td colspan='2' align="center" class='validate'><label id='uidtext'></label></td>
+			</tr>
+			<tr>
+				<td class='tb'>Password</td>
+				<td class='tb'><input type='password' name='pass' id='pass'/></td>
+			</tr>
+			<tr>
+				<td class='validate' colspan='2' align="center"><label id='passtext'></label></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" class='validate'>
+					<label style='color:red' th:text="${msg}"></label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan='2' align='center'>
+					<button class="bt gap" style="width:65%;margin-left:0;" th:onclick="return checkData()">Submit</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" style="padding: 0.5vw 0vw;color:white;">
+					<label class="gap" style="font-size: 1.5vw;">Don't have an account?</label>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div class="dv" style="margin-top: 0;">
+		<div class="lw">
+		<form action="/productstore/user/login/register" style="margin: 0;" method="post">
+				<button class="bt gap btt">Create New Accout</button>
+		</form>
+		</div>			
+	</div>
+</body>
+</html>

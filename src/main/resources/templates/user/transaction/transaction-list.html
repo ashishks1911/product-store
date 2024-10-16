@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<body>
+	<div clsss="container">
+		<div class="card col-md-10 mx-auto">
+		<div class="card-body">
+			<div th:if="${tlist.empty}" class="dv">
+				<label style="color: red;font-size:2.0vw">Transaction List is Empty</label>
+			</div>
+			<div th:if="${!tlist.empty}">
+				<table class="table">
+					<thead class="bg-primary" style="color: white;">
+						<th>Product ID</th>
+						<th>Transaction ID</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Total Cost</th>
+						<th>Date</th>
+					</thead>
+					<tbody>
+						<tr th:each="t:${tlist}">
+							<td><a th:href="@{product-details(pid=${t.pid})}" th:text="${t.pid}"></a></td>
+							<td th:text="${t.tid}"></td>
+							<td th:text="${t.quantity}"></td>
+							<td th:text="${'&#8377;'+t.price}"></td>
+							<td th:text="${'&#8377;'+t.quantity*t.price}"></td>
+							<td th:text="${t.date}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+			<div class="dv">
+			<a href="/productstore/user/home" class="bt" style="background-color: magenta;">Back</a>
+			</div>
+	</div>
+</body>
+</html>

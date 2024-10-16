@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<script th:src="@{/JS/script.js}"></script>
+
+<body>
+	<div clsss="container">
+		<div class="card col-md-4 mx-auto">
+			<div class="card-body col-md-12 mx-auto">
+			<table class="table table-striped">
+					<tr>
+						<th colspan="2" style="text-align: center;color:white;font-size: 1.5vw;" class="bg-primary">
+							<label>User Profile Details</label>
+						</th>
+					</tr>
+					<tr>
+						<td>User ID</td>
+						<td th:text="${user.userid}"></td>
+					</tr>
+					<tr>
+						<td>User Name</td>
+						<td th:text="${user.name}"></td>
+					</tr>
+					<tr>
+						<td>User password</td>
+						<td th:text="${user.password}"></td>
+					</tr>
+					<tr>
+						<td>User Phone No.</td>
+						<td th:text="${user.phone}"></td>
+					</tr>
+					<tr>
+						<td>User Address</td>
+						<td th:text="${user.address}"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="dv">
+			<a class="bt" href="home" style="background-color: orange;">Back</a>
+		</divc>
+	</div>
+</body>
+</html>

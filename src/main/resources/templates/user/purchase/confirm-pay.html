@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/user/top"></div>
+<script th:src="@{/JS/script.js}"></script>
+<style>
+	tr {
+		padding: 1.5vw
+	}
+
+	input[type=text] {
+		width: 100%;
+		border: none;
+		outline: none;
+		border-bottom: 1px solid black;
+	}
+
+	.tata {
+		width: 100%;
+	}
+	
+</style>
+
+<body>
+	<div clsss="container">
+		<div class="card col-md-4 mx-auto">
+			<div class="card-body col-md-12 mx-auto p-3">
+				<form action="verify-card" method="post">
+					<div style="font-size: 1.5vw;">
+						<b style="color: green;">Amount to be paid : <span style="color: red;">&#8377;</span> </b>
+						<label th:text="${cost}"></label>
+						<input type="hidden" name="cost" th:value="${cost}">
+					</div>
+					<div style="padding: 1.5vw;border: 1px solid;border-radius: 0.5vw;">
+						<table class="tata">
+							<tr>
+								<td colspan="2" style="padding-bottom: 1.2vw;">
+									<b>Card Holder Name</b><br>
+									<input class="tata" type="text" name="cardName">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="padding-bottom: 1.2vw;">
+									<b>Card Number</b><br>
+									<input class="tata" type="text" name="cardNumber">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Expiry/validity</b><br>
+									<select name="month" style="margin-top: 0.6vw;">
+										<option value='1'>01</option><option value='2'>02</option>
+										<option value='3'>03</option><option value='4'>04</option>
+										<option value='5'>05</option><option value='6'>06</option>
+										<option value='7'>07</option><option value='8'>08</option>
+										<option value='9'>09</option><option value='10'>10</option>
+										<option value='11'>11</option><option value='12'>12</option>
+									</select>
+									<select name="year" style="margin-left: 0.5vw;">
+										<option th:each="c:${#numbers.sequence(year,year+8,1)}" th:value="${c}" th:text="${c}"></option>
+									</select>
+								</td>
+								<td>
+									<b>CVV</b><br>
+									<input type="text" name="cvv" style="width: 4vw;font-size: 1.35vw;">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div style="text-align: center;">
+							<label th:text="${msg}" style="color: red;padding-top:1.5vw"></label>
+						</div>
+					<div class="dv2">
+						<div class="col-md-12" style="text-align: center;">
+							<button class="btn btn-primary">Confirm Pay</button>
+							<a class="btn" href="purchase" style="background-color: orange;">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

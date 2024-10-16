@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="/inventory/top"></div>
+
+<body>
+	<div clsss="container">
+		<div class="card col-md-6 mx-auto">
+			<div class="card-body">
+			<form action="update" method="post">
+				<div class="row form-group">
+					<div class="col-md-12">
+						<label for="name">Product ID</label>
+						<input type="text" readonly class="form-control" th:value="${product.pid}">
+						<input type="hidden" id="name" name="pid" th:value="${product.pid}">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="name">Edit Product Name</label>
+						<input type="text" class="form-control" id="name" name="name" th:value="${product.name}">
+					</div>
+					<div class="col-md-6">
+						<label for="brand">Enter Product Brand</label>
+						<input type="text" class="form-control" id="brand" name="brand" th:value="${product.brand}" >
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-8">
+						<label for="category">Enter Product Category</label>
+						<select name="category" id="category" class="form-control">
+							<option th:each="cat:${clist}" th:value="${cat.catid}" th:text="${cat.category}"></option>
+						</select>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<label for="stock">Enter Unit in Stock</label>
+						<input type="text" class="form-control" id="stock" name="unit_in_stock" th:value="${product.unit_in_stock}">
+					</div>
+					<div class="col-md-6">
+						<label for="price">Enter Price</label>
+						<input type="text" class="form-control" id="price" name="price" th:value="${product.price}">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-12" style="text-align: center;">
+						<button class="btn btn-primary">Update Product</button>
+						<a class="btn" href="manage" style="background-color: orange;">Cancel</a>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
